@@ -35,10 +35,17 @@ const slice = createSlice({
             .addCase(logoutUser.fulfilled,() => {
                 return initialState;
             })
+            .addCase(currentUser.pending, state => {
+                state.isRefreshing = true;
+            })
+            .addCase(currentUser.rejected, state => {
+                state.isRefreshing = false;
+            })
             .addCase(currentUser.fulfilled, (state, {payload}) => {
                 state.user.name = payload.name;
                 state.user.email = payload.email;
                 state.isLoggedIn = true;
+                state.isRefreshing = false;
             })
           
     }

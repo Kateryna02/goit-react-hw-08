@@ -32,7 +32,7 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkApi) =>
 export const currentUser = createAsyncThunk('auth/current', async (_, thunkApi) => {
     const savedToken = thunkApi.getState().auth.token
     console.log(thunkApi.getState().auth);
-    if (savedToken === null) {
+    if (!savedToken) {
         return thunkApi.rejectWithValue('not fetch user')
     }
     setToken(savedToken)
