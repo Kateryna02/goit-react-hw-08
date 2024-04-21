@@ -37,7 +37,7 @@ export const currentUser = createAsyncThunk('auth/current', async (_, thunkApi) 
     }
     setToken(savedToken)
     try {
-        const { data } = await contactApi.get('/users/me');
+        const { data } = await contactApi.get('/users/current');
         return data;
     } catch (error) {
         return thunkApi.rejectWithValue(error.message);
