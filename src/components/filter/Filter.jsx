@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleChangeFilter } from '../../redux/filtersSlice';
+import { handleChangeFilter } from '../../redux/filter/filtersSlice';
 import { selectNameFilter } from '../../redux/selectors'
 import s from './Filter.module.css';
 
