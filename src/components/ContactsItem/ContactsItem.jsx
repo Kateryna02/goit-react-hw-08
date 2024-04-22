@@ -17,7 +17,7 @@ const ContactItem = ({ contact }) => {
     return (
         <li className={s.contactItem}>
             <p className={s.contactP}>{name}: {number}</p>
-            <button className={s.buttonItem} type="button" onClick={handleDelete}>Delete</button>
+            <button type="button" onClick={handleDelete}>Delete</button>
         </li>
     );
 };

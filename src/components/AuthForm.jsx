@@ -3,7 +3,7 @@ import { Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 export default function AuthForm({ title, onSubmit, initialValues, type }) {
     return (
-        <div>
+        <div className="formLogin">
             <Formik onSubmit={onSubmit} initialValues={initialValues}>
                 <Form className="form">
                     {type === 'register' && <Field className='field'

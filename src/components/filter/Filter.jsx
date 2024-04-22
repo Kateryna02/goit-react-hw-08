@@ -1,33 +1,38 @@
-
-
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleChangeFilter } from '../../redux/filtersSlice'; 
+import { handleChangeFilter } from '../../redux/filtersSlice';
 import { selectNameFilter } from '../../redux/selectors'
 import s from './Filter.module.css';
 
 const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(selectNameFilter);
+    const nameFilter = useSelector(selectNameFilter);
 
-    const handleFilterChange = e => {
-        dispatch(handleChangeFilter(e.target.value)); 
+    const handleFilterChange = e => { 
+        const value = e.target.value;
+       
+        dispatch(handleChangeFilter(value));
     };
 
     return (
         <div className={s.filter}>
-            <label htmlFor="filter">Filter contacts by name:</label>
+            <label htmlFor="filter">Filter contacts by name or phone number:</label>
             <input
                 type="text"
                 id="filter"
                 name="filter"
-                value={filter}
+                value={ nameFilter } 
                 onChange={handleFilterChange}
-                placeholder="Enter name to filter"
+                placeholder="name or phone"
             />
         </div>
     );
 };
 
 export default Filter;
+
+
+
+
+
 

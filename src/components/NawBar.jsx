@@ -10,7 +10,7 @@ export default function NawBar() {
   return (
     <div className='header'>
       <Link to="/">
-        React Auth
+        {/* React Auth */}
       </Link>
       <p>{user.email}</p>
 
